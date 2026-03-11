@@ -1,0 +1,47 @@
+# Proposal: Improving Production Stability Through Controlled Testing
+
+## Context
+
+We’ve observed recurring production issues such as:
+
+- Backend approvals not updating in Dataverse  
+- 504 Gateway Timeouts  
+- 403 authorization responses  
+- Inconsistent user access behavior  
+- Limited user-facing error clarity  
+
+These issues suggest there may be edge-case failure scenarios we haven’t fully validated in lower environments.
+
+---
+
+## Suggestion
+
+I’d like to explore introducing **controlled resilience testing in Dev/Staging** to better understand how our system behaves when dependencies fail.
+
+This would involve safely simulating:
+
+- API timeouts and 500/504 responses  
+- Authorization failures  
+- Dataverse write failures after backend success  
+- Token expiration scenarios  
+- Flow interruptions  
+
+The goal is not to create disruption, but to proactively identify and close stability gaps.
+
+---
+
+## Potential Benefits
+
+- Earlier detection of integration inconsistencies  
+- Clearer error messaging to users  
+- Improved monitoring validation  
+- Reduced production firefighting  
+- Faster root cause analysis  
+
+---
+
+## Proposed Next Step
+
+If you agree, we can run a small 2–4 week pilot in staging focused on one critical workflow and review findings together.
+
+I believe this could help us reduce recurring instability and improve overall reliability.
